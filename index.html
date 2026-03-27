@@ -1,0 +1,547 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Волкова Екатерина | AI-портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fbfcff 0%, #f5f7fe 100%);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #111827;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* ===== СОВРЕМЕННЫЙ ГРАДИЕНТНЫЙ ЗАГОЛОВОК С ПРОЗРАЧНОСТЬЮ ===== */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 1rem 0 2rem;
+            position: relative;
+        }
+
+        .gradient-title {
+            font-size: clamp(2.4rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #5B4BFF, #8B5CF6, #EC489A, #F97316);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientFlow 8s ease infinite;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(91, 75, 255, 0.1);
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .name-highlight {
+            font-size: clamp(1.3rem, 5vw, 1.9rem);
+            font-weight: 600;
+            background: linear-gradient(120deg, #1F2937, #4B5563);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-top: 0.5rem;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            background-color: rgba(91, 75, 255, 0.08);
+            backdrop-filter: blur(2px);
+        }
+
+        /* ===== ВИЗУАЛЬНАЯ ИЕРАРХИЯ ===== */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-left: 5px solid #5B4BFF;
+            padding-left: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            color: #0F172A;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header .accent-badge {
+            background: linear-gradient(95deg, #EEF2FF, #E0E7FF);
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5B4BFF;
+        }
+
+        /* ===== КАРТОЧКИ НАВЫКОВ С АНИМАЦИЕЙ ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid rgba(91, 75, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #5B4BFF, #EC489A);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(91, 75, 255, 0.25);
+            border-color: rgba(91, 75, 255, 0.3);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #EEF2FF, #FFFFFF);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: #5B4BFF;
+            border: 1px solid rgba(91, 75, 255, 0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #0F172A;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .skill-card li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .skill-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #5B4BFF;
+            font-weight: 700;
+        }
+
+        /* ===== ВЫДЕЛЕННЫЕ БЛОКИ-КЕЙСЫ ===== */
+        .case-block {
+            background: linear-gradient(115deg, #FEF9E6 0%, #FFF7ED 100%);
+            border-left: 6px solid #F97316;
+            border-radius: 24px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+        }
+
+        .case-block:hover {
+            transform: scale(1.01);
+            background: linear-gradient(115deg, #FFF3E0, #FFFAF0);
+            border-left-color: #FF6B4A;
+        }
+
+        .case-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: #C2410C;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-label i {
+            font-size: 1rem;
+        }
+
+        .case-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2D3A4B;
+            line-height: 1.5;
+        }
+
+        /* ===== СЕТКА ИНСТРУМЕНТОВ (ТЕГИ) ===== */
+        .tools-tag-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .tag {
+            background: rgba(91, 75, 255, 0.08);
+            backdrop-filter: blur(2px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #4F46E5;
+            transition: all 0.2s;
+            border: 1px solid rgba(91, 75, 255, 0.2);
+        }
+
+        .tag:hover {
+            background: #5B4BFF;
+            color: white;
+            border-color: #5B4BFF;
+            transform: translateY(-2px);
+        }
+
+        /* ===== СПЕЦИАЛЬНЫЙ БЛОК ОБРАЗОВАНИЕ ===== */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .edu-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .edu-card:hover {
+            border-color: #5B4BFF;
+            box-shadow: 0 15px 30px -12px rgba(91,75,255,0.12);
+        }
+
+        .edu-icon {
+            background: #EEF2FF;
+            width: 48px;
+            height: 48px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #5B4BFF;
+        }
+
+        .edu-content h4 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-content p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .year {
+            font-size: 0.75rem;
+            color: #5B4BFF;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        hr {
+            margin: 1.8rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #CBD5E1, transparent);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.2rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .skill-card {
+                padding: 1.4rem;
+            }
+            .section-header {
+                padding-left: 1rem;
+            }
+            .case-block {
+                padding: 1.2rem;
+            }
+            .tools-tag-grid {
+                gap: 0.6rem;
+            }
+            .tag {
+                padding: 0.4rem 1rem;
+                font-size: 0.75rem;
+            }
+            .edu-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* акцентные элементы */
+        .accent-dot {
+            width: 8px;
+            height: 8px;
+            background: #F97316;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            font-size: 0.8rem;
+            color: #6C727F;
+            border-top: 1px solid #E2E8F0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Герой с градиентным заголовком -->
+    <div class="hero">
+        <h1 class="gradient-title">ПОРТФОЛИО AI-навыков</h1>
+        <div class="name-highlight">
+            <i class="fas fa-star-of-life" style="font-size: 0.9rem; color: #5B4BFF;"></i> Волкова Екатерина Александровна
+        </div>
+        <div style="margin-top: 1rem;">
+            <span class="tag" style="background: #5B4BFF10;"><i class="fas fa-brain"></i> AI-эксперт</span>
+            <span class="tag" style="background: #5B4BFF10;"><i class="fas fa-code"></i> Промт-инженер</span>
+        </div>
+    </div>
+
+    <!-- 1. Ключевые AI-навыки и практические кейсы + карточки -->
+    <section>
+        <div class="section-header">
+            <h2>🤖 1. Ключевые AI-навыки и практические кейсы</h2>
+            <div class="accent-badge">экспертный уровень</div>
+        </div>
+        <div class="skills-grid">
+            <!-- Карточка: работа с нейросетями -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                <h3>1.1 Эффективная работа с нейросетями</h3>
+                <ul>
+                    <li>Различаю ИИ, нейросети, ChatGPT, умею объяснять разницу простым языком.</li>
+                    <li>Применяю нейросети для личной эффективности: составление маршрутов путешествий в разрезе времени, объектов; подбор косметики под запрос на конкретный результат; подбор и составление программ развития для ребенка; разработка личных планов развития и т.д.</li>
+                </ul>
+                <!-- Пример кейса в выделенном блоке -->
+                <div class="case-block">
+                    <div class="case-label">
+                        <i class="fas fa-briefcase"></i> КЕЙС: автоматизация рутины
+                    </div>
+                    <div class="case-text">
+                        <strong>📊 Оптимизация авансового отчета:</strong> с помощью написания кода и создания автоматического заполнения таблицы на основании опросника через телефон. Сократила время на 70%.
+                    </div>
+                </div>
+                <div class="tools-tag-grid">
+                    <span class="tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tag"><i class="fas fa-table"></i> Авто-таблицы</span>
+                    <span class="tag"><i class="fas fa-mobile-alt"></i> Telegram-опросник</span>
+                </div>
+            </div>
+
+            <!-- Карточка: промт-инжиниринг -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-magic"></i></div>
+                <h3>2. Промт-инжиниринг</h3>
+                <ul>
+                    <li>Владею всеми техниками: последовательные, ролевые, диалоговые промты, кастомизация под задачу.</li>
+                    <li>Использую фреймворки для генерации сложных бизнес-текстов и аналитики.</li>
+                </ul>
+                <div class="case-block">
+                    <div class="case-label">
+                        <i class="fas fa-chart-line"></i> КЕЙС: финансовая модель
+                    </div>
+                    <div class="case-text">
+                        <strong>🏗️ Финансовая модель для аренды спецтехники:</strong> разработала последовательность промтов для генерации комплексной модели, что позволило собственнику увидеть максимум прибыли и сформировать план для коммерческого отдела.
+                    </div>
+                </div>
+                <div class="tools-tag-grid">
+                    <span class="tag"><i class="fas fa-comment-dots"></i> Chain-of-Thought</span>
+                    <span class="tag"><i class="fas fa-user-tag"></i> Ролевые промты</span>
+                    <span class="tag"><i class="fas fa-chart-simple"></i> Бизнес-аналитика</span>
+                    <span class="tag"><i class="fas fa-cogs"></i> Фреймворки</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительная сетка инструментов / теги (расширенная мета-секция) -->
+    <section>
+        <div class="section-header">
+            <h2>🧰 Инструменты & экосистема AI</h2>
+            <div class="accent-badge">стек технологий</div>
+        </div>
+        <div class="tools-tag-grid" style="margin-bottom: 0.5rem;">
+            <span class="tag"><i class="fab fa-openai"></i> ChatGPT-4</span>
+            <span class="tag"><i class="fas fa-brain"></i> Claude</span>
+            <span class="tag"><i class="fas fa-chart-line"></i> Midjourney</span>
+            <span class="tag"><i class="fas fa-file-alt"></i> Gamma.app</span>
+            <span class="tag"><i class="fas fa-database"></i> Notion AI</span>
+            <span class="tag"><i class="fas fa-code-branch"></i> Copilot</span>
+            <span class="tag"><i class="fas fa-chart-pie"></i> Excel + Python AI</span>
+            <span class="tag"><i class="fas fa-robot"></i> AutoGPT</span>
+            <span class="tag"><i class="fas fa-chalkboard-user"></i> DALL·E 3</span>
+        </div>
+        <div class="case-block" style="background: #EFF6FF; border-left-color: #3B82F6;">
+            <div class="case-label"><i class="fas fa-lightbulb"></i> Промт-фреймворки в действии</div>
+            <div class="case-text">Применяю CO-STAR, RTF, TAG-методологии для генерации аналитических отчетов, маркетинговых стратегий и финансовых прогнозов.</div>
+        </div>
+    </section>
+
+    <!-- 2. Образование в сфере AI (карточки + четкая иерархия) -->
+    <section>
+        <div class="section-header">
+            <h2>🎓 Образование в сфере AI</h2>
+            <div class="accent-badge">сертифицированный специалист</div>
+        </div>
+        <div class="education-grid">
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                <div class="edu-content">
+                    <h4>Специалист по настройке и применению систем искусственного интеллекта</h4>
+                    <p>Центр повышения квалификации «ПАРТНЕР»</p>
+                    <div class="year"><i class="far fa-calendar-alt"></i> 2025г</div>
+                </div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="edu-content">
+                    <h4>Практический курс AI-навыки финансиста</h4>
+                    <p>Онлайн-школа финансистов "Финансовый директор Мастер CFO"</p>
+                    <div class="year"><i class="far fa-calendar-alt"></i> 2026</div>
+                </div>
+            </div>
+        </div>
+        <!-- дополнительный акцентный элемент -->
+        <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;">
+            <div style="display: flex; gap: 0.5rem;">
+                <span class="accent-dot"></span><span style="font-weight: 500;">Глубокое понимание AI-архитектур</span>
+                <span class="accent-dot" style="background:#5B4BFF;"></span><span style="font-weight: 500;">Практические внедрения</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- дополнительный кейс: еще один выделенный блок с примером эффективности -->
+    <section>
+        <div class="section-header">
+            <h2>📌 Реальные бизнес-результаты</h2>
+            <div class="accent-badge">case studies</div>
+        </div>
+        <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="case-block" style="background: white; border-left-color: #5B4BFF; margin:0;">
+                <div class="case-label"><i class="fas fa-chart-simple"></i> Личная эффективность</div>
+                <div class="case-text">✅ Составила более 20 индивидуальных маршрутов путешествий с учетом временных слотов, используя комбинацию GPT + карты + API. Экономия времени до 40%.</div>
+            </div>
+            <div class="case-block" style="background: white; border-left-color: #EC489A; margin:0;">
+                <div class="case-label"><i class="fas fa-graduation-cap"></i> Развитие ребенка</div>
+                <div class="case-text">✅ Разработала персонализированную программу развития на основе AI-ассистентов: подбор материалов, расписание, геймификация – результат +35% вовлеченности.</div>
+            </div>
+            <div class="case-block" style="background: white; border-left-color: #10B981; margin:0;">
+                <div class="case-label"><i class="fas fa-chalkboard"></i> Финансовое планирование</div>
+                <div class="case-text">✅ Создание автоматизированных шаблонов планирования личных финансов с помощью AI-скриптов и нейросетевой аналитики.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка инструментов + снова теги (повышение детализации) -->
+    <section>
+        <div class="section-header">
+            <h2>⚙️ Промт-инжиниринг техники</h2>
+            <div class="accent-badge">экспертные знания</div>
+        </div>
+        <div class="tools-tag-grid">
+            <span class="tag">Последовательные промты</span>
+            <span class="tag">Ролевой промптинг</span>
+            <span class="tag">Диалоговые сценарии</span>
+            <span class="tag">Few-shot learning</span>
+            <span class="tag">Chain-of-Density</span>
+            <span class="tag">ReAct паттерн</span>
+            <span class="tag">Tree of Thoughts</span>
+            <span class="tag">Кастомизация под бизнес-задачи</span>
+        </div>
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; background: linear-gradient(120deg, #F9FAFB, #FFFFFF); border-radius: 32px; padding: 1.5rem; margin-top: 1rem;">
+            <div><i class="fas fa-check-circle" style="color:#5B4BFF;"></i> <strong>+80%</strong> скорости создания сложной аналитики</div>
+            <div><i class="fas fa-check-circle" style="color:#5B4BFF;"></i> <strong>AI-трансформация</strong> рутинных процессов</div>
+            <div><i class="fas fa-check-circle" style="color:#5B4BFF;"></i> <strong>Мультимодальные</strong> решения</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Волкова Екатерина Александровна — AI-эксперт, промт-инженер, специалист по внедрению нейросетей в бизнес-процессы</p>
+        <p style="margin-top: 0.5rem;"><i class="fas fa-crown" style="color:#F59E0B;"></i> Современные AI-решения для роста эффективности</p>
+    </footer>
+</div>
+</body>
+</html>
